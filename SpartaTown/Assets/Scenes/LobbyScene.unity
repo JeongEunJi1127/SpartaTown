@@ -420,8 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2841d2af17e56418362e96dba0d3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Job: 0
+  playerSO: {fileID: 11400000, guid: 646b51151ea6a7d40aac9295823e90d3, type: 2}
 --- !u!1 &329410095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

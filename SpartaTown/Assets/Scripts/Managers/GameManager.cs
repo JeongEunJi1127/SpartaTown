@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public string Name;
-    public Character.JobType Job;
+    public CharacterSO playerSO;
 
     private void Awake()
     {
@@ -20,5 +16,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); 
         }
+        
     }
 }

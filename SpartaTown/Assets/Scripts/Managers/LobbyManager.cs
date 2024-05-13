@@ -33,7 +33,7 @@ public class LobbyManager : MonoBehaviour
         characterCreateCanvas.SetActive(false);
         if (chooseJobTwice)
         {
-            Character.JobType jobType = GameManager.Instance.Job;
+            Character.JobType jobType = GameManager.Instance.playerSO.job;
 
             characterCreateBtn.SetActive(false);
             selectedCharacterCreateBtn.SetActive(true);
@@ -43,7 +43,7 @@ public class LobbyManager : MonoBehaviour
 
     public void OnKnightBtn()
     {
-        GameManager.Instance.Job = Character.JobType.Knight;
+        GameManager.Instance.playerSO.job = Character.JobType.Knight;
         isSelectedJob = true;
         chooseJobTwice = true;
         DisableCharCreateCanvas();
@@ -51,7 +51,7 @@ public class LobbyManager : MonoBehaviour
 
     public void OnWizardBtn()
     {
-        GameManager.Instance.Job = Character.JobType.Wizard;
+        GameManager.Instance.playerSO.job = Character.JobType.Wizard;
         isSelectedJob = true;
         chooseJobTwice = true;
         DisableCharCreateCanvas();
@@ -61,7 +61,7 @@ public class LobbyManager : MonoBehaviour
     {
         if (nameInputField.text != null)
         {
-            GameManager.Instance.Name = nameInputField.text;
+            GameManager.Instance.playerSO.name = nameInputField.text;
         }
         isSelectedName = true;
     }
@@ -76,7 +76,7 @@ public class LobbyManager : MonoBehaviour
         {
             StartCoroutine(DisableCanvas(warnNameCanvas, 2f));
         }
-        else if (GameManager.Instance.Name.Length < 2 || GameManager.Instance.Name.Length > 10)
+        else if (GameManager.Instance.playerSO.name.Length < 2 || GameManager.Instance.playerSO.name.Length > 10)
         {
             StartCoroutine(DisableCanvas(warnNameLengthCanvas, 2f));
         }

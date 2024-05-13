@@ -5,7 +5,7 @@ public class CharacterSO : ScriptableObject
 {
     [Header("Character")]
     public string name;
-    public string job;
+    public Character.JobType job;
     public int speed;
     
 }
