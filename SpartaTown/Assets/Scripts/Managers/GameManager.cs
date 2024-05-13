@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public CharacterSO playerSO;
 
+    public GameObject player;
+
     private void Awake()
     {
         if (Instance == null)
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); 
         }
-        
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }
