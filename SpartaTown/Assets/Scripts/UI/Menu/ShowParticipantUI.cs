@@ -6,7 +6,6 @@ public class ShowParticipantUI : MenuUI
     [SerializeField] private GameObject ShowParticipantCanvas;
     [SerializeField] private Button ShowParticipantBtn;
     [SerializeField] private Button DisableShowParticipantBtn;
-    [SerializeField] private Text PlayerTxt;
 
     private bool IsShowParticipant = true;
 
