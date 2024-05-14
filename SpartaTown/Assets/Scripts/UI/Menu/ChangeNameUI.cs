@@ -8,7 +8,8 @@ public class ChangeNameUI : MenuUI
 
     [SerializeField] private Button ChangeNameBtn;
     [SerializeField] private InputField nameInputField;
-    
+    [SerializeField] private Text PlayerTxt;
+
     private string newName;
     private bool IsChangeName = true;
 
@@ -19,6 +20,7 @@ public class ChangeNameUI : MenuUI
             AbleBtnCanvas(ChangeNameCanvas, IsChangeName);
             IsChangeName = !IsChangeName;
         });
+        PlayerTxt.text = GameManager.Instance.playerSO.name;
     }
 
     public void ChangeNameInput()
@@ -38,6 +40,7 @@ public class ChangeNameUI : MenuUI
         {
             GameManager.Instance.playerSO.name = newName;
             GameManager.Instance.player.GetComponent<CharacterUI>().UpdateName();
+            PlayerTxt.text = GameManager.Instance.playerSO.name;
             AbleCanvas(ChangeNameCanvas, false);
         }
     }

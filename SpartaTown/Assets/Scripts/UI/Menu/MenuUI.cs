@@ -16,7 +16,6 @@ public class MenuUI : MonoBehaviour
     protected void AbleBtnCanvas(GameObject canvas, bool b)
     {
         bool IsActive = GameManager.Instance.IsActive;
-        if (!IsActive) return;
 
         if (b && IsActive)
         {
