@@ -9,6 +9,7 @@ public class CharacterUI : MonoBehaviour
     private void Awake()
     {
         EnableCharacter();
+        UpdateName();
     }
 
     public void EnableCharacter()
@@ -22,8 +23,10 @@ public class CharacterUI : MonoBehaviour
     }
 
     public void UpdateJob()
-    {
+    {    
         Character[1-(int)GameManager.Instance.playerSO.job].SetActive(false);
+        Vector3 nowPos = Character[1 - (int)GameManager.Instance.playerSO.job].transform.position;
         Character[(int)GameManager.Instance.playerSO.job].SetActive(true);
+        Character[(int)GameManager.Instance.playerSO.job].transform.position = nowPos;
     }
 }

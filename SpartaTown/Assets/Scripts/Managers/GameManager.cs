@@ -19,6 +19,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); 
         }
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 }
