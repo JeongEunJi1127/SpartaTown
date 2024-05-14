@@ -29,12 +29,12 @@ public class ChangeNameUI : MenuUI
     public void ChangeName()
     {
         Time.timeScale = 1;
-        if (newName.Length < 2 || newName.Length > 10)
+        if (string.IsNullOrEmpty(newName) || newName.Length < 2 || newName.Length > 10)
         {
             StartCoroutine(DisableCanvas(WarnNameCanvas, 1.5f));
             nameInputField.text = "";
         }
-        else if (newName != null)
+        else
         {
             GameManager.Instance.playerSO.name = newName;
             GameManager.Instance.player.GetComponent<CharacterUI>().UpdateName();

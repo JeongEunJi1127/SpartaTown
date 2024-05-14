@@ -19,7 +19,10 @@ public class CharacterUI : MonoBehaviour
 
     public void UpdateName()
     {
-        characterName.text = GameManager.Instance.playerSO.name;
+        if(!string.IsNullOrEmpty(characterName.ToString()))
+        {
+            characterName.text = GameManager.Instance.playerSO.name;
+        }
     }
 
     public void UpdateJob()
