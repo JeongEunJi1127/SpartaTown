@@ -3,10 +3,9 @@ using System.Collections;
 
 public class MenuUI : MonoBehaviour
 {
-    private bool IsActive;
     protected virtual void Awake()
     {
-        IsActive = true;
+
     }
 
     protected void AbleCanvas(GameObject canvas, bool b)
@@ -16,23 +15,21 @@ public class MenuUI : MonoBehaviour
 
     protected void AbleBtnCanvas(GameObject canvas, bool b)
     {
+        bool IsActive = GameManager.Instance.IsActive;
+        if (!IsActive) return;
+
         if (b && IsActive)
         {
             Time.timeScale = 0;
             AbleCanvas(canvas, true);
-            StartCoroutine(EnableButtonAfterDelay(0.5f));
+            GameManager.Instance.IsActive = false;
         }
-        else if (!b || !IsActive)
+        else
         {
             Time.timeScale = 1;
             AbleCanvas(canvas, false);
-            IsActive = true;
+            GameManager.Instance.IsActive = true;
         }
-    }
-    protected IEnumerator EnableButtonAfterDelay(float delay)
-    {
-        IsActive = false;
-        yield return new WaitForSeconds(delay);
     }
 
     protected IEnumerator DisableCanvas(GameObject canvas, float delay)

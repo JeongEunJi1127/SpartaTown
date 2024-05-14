@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public CharacterSO playerSO;
 
     public GameObject player;
+    public bool IsActive;
 
     private void Awake()
     {
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); 
         }
-
-        
-    }
+        IsActive = true;
+    }    
 }
